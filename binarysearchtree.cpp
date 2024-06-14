@@ -21,10 +21,38 @@ public:
 class BinaryTree
 {
 public:
-    Node* ROOT;
+	Node* ROOT;
+	BinaryTree()
+	{
+		ROOT = NULL; //Initializing ROOT to null
+	}
 
-    BinaryTree()
-    {
-        ROOT = NULL; //Initializing ROOT to null
-    }
-}
+	void insert(string element) // Insert a node in the binary search tree
+
+	{
+		Node* newNode = new Node(element, NULL, NULL); // Allocate memory for the new node
+		newNode->info = element; // Assign value to the data field of the new data
+		newNode->leftchild = NULL; // Make the left child of the new node point NULL
+		newNode->rightchild = NULL; // Make the right child of the new data point to NULL
+
+		Node* parent = NULL;
+		Node* currentNode = NULL;
+		search(element, parent, currentNode); // Locate the node which be the parent of the node to be inserted
+
+
+		if (parent == NULL) // If the parent is NULL (Tree is empty)
+		{
+			ROOT = newNode; // Mark the new node as ROOT
+			return; // Exit
+		}
+
+
+		if (element < parent->info) // If the value in the data field of the new node is less than that of the parent
+		{
+			parent->leftchild = newNode; // Make the left chilf of the parent point to the new node
+		}
+		else if (element > parent->info) // If the value in the data field of the new data is greater than of the parent
+		{
+			parent->rightchild = newNode; // Make the right child of the parent point to the new node
+		}
+	}
