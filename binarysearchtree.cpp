@@ -134,7 +134,7 @@ int main()
 		cin >> ch;
 		cout << endl;
 
-        switch (ch)
+		switch (ch)
 		{
 		case '1':
 		{
@@ -144,31 +144,30 @@ int main()
 			obj.insert(word);
 			break;
 		}
-        case '2':
+		case '2':
 		{
 			obj.inorder(obj.ROOT);
 			break;
-        }
-        case '3':
+		}
+		case '3':
 		{
 			obj.preorder(obj.ROOT);
 			break;
 		}
-        case '4':
+		case '4':
 		{
 			obj.postorder(obj.ROOT);
 			break;
-        }
-        case '5':
+		}
+		case '5':
 			return 0;
 		default:
 		{
 			cout << "Invalid option" << endl;
 			break;
 		}
-
-    }
-
+		}
+	}
 }
 
 
